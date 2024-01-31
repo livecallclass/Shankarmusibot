@@ -77,7 +77,7 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"इतना वीडियो है {len(links)}**\n\n कहा से DOWNLOAD करना है **1**")
+    await editable.edit(f"इतना वीडियो है {len(links)}**\n\n कहा से DOWNLOAD करना है 
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -114,13 +114,13 @@ async def account_login(bot: Client, m: Message):
 
     await editable.edit(" 😁 किसका नाम लिखूँ 😁")
     input3: Message = await bot.listen(editable.chat.id)
-    raw_text3 = input3.text
+    raw_text3 = @HELP_BY_TITANIC.text
     await input3.delete(True)
     highlighter  = f"️ ⁪⁬⁮⁮⁮"
     if raw_text3 == 'Co':
         MR = highlighter 
     else:
-        MR = raw_text3
+        MR = @HELP_BY_TITANIC
    
     await editable.edit("किसका फोटो लगाऊँ\nEg : ```https://telegra.ph/file/0633f8b6a6f110d34f044.jpg```\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
@@ -201,7 +201,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"सब्र कर कर रहा हूँ \n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n"
+                    Show = f"सब्र कर कर रहा हूँ \n\n**Name :-** `{name}
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
