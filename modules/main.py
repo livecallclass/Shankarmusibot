@@ -43,7 +43,7 @@ if owner not in SUDOERS:
 
 @bot.on_message(filters.command(["start"]) & SUDOERS)
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hello Bot Made By TITANIC [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /txt")
+    editable = await m.reply_text(f"BOT MADE BY - TITANIC [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nGIVE COMMAND - /titanic")
 
 
 @bot.on_message(filters.command("stop") & SUDOERS)
@@ -53,9 +53,9 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["txt"]) & SUDOERS)
+@bot.on_message(filters.command(["TITANIC"]) & SUDOERS)
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('Send TXT file 📩')
+    editable = await m.reply_text('GIVE ME TXT FILE')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -77,18 +77,18 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
+    await editable.edit(f"Total Links **{len(links)}**\n\nLike **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Enter Batch Name**")
+    await editable.edit("**Batch Name**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
     
 
-    await editable.edit("**Enter resolution**")
+    await editable.edit("**Quality**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -112,7 +112,7 @@ async def account_login(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Enter A Highlighter (Download By) **")
+    await editable.edit("**Download By - **")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -122,7 +122,7 @@ async def account_login(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the **Thumb url**\nEg : ```https://telegra.ph/file/0633f8b6a6f110d34f044.jpg```\n\nor Send `no`")
+    await editable.edit("Now send the **Thumbnail Link **\nEg : ```https://telegra.ph/file/14e207b8864a214b7068a.jpg```\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -201,7 +201,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n"
+                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -212,7 +212,7 @@ async def account_login(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                    f"**downloading failed 🚫**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                    f"**downloading failed 🚫**\n{str(e)}\n**Name** - {name}"
                 )
                 continue
 
