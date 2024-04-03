@@ -43,17 +43,17 @@ if owner not in SUDOERS:
 
 @bot.on_message(filters.command(["start"]) & SUDOERS)
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"BOT MADE BY - KING & QUEEN  [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nGIVE COMMAND - /RISHABH")
+    editable = await m.reply_text(f"BOT MADE BY - TITANIC  [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nGIVE COMMAND - /TITANIC")
 
 
 @bot.on_message(filters.command("stop") & SUDOERS)
 async def restart_handler(_, m):
-    await m.reply_text("❌**STOPPED**❌", True)
+    await m.reply_text("**STOPPED**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["RISHABH"]) & SUDOERS)
+@bot.on_message(filters.command(["TITANIC"]) & SUDOERS)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('GIVE ME TXT FILE')
     input: Message = await bot.listen(editable.chat.id)
@@ -218,7 +218,7 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("✅ D O N E ✅")
+    await m.reply_text(" D O N E ")
 
 
 bot.run()
